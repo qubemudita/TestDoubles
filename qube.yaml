@@ -1,0 +1,32 @@
+id: 31831215-5cbf-47ef-80b6-ee563582bf7e
+version: v2
+name: muditatestnode
+apptype: api
+language: nodejs
+containerName: muditatestnode
+toolchain:
+  id: 58ffd892bc8478001e1efb21
+  name: test-nodejs-toolchain
+opinion:
+  id: 58f95649e936e0000b151362
+  name: Qubeship default opinion
+endpoint:
+  id: 58ee79cc238503000b74d7b1
+  name: Qubeship Sandbox Cluster
+  type: target
+variables:
+  - name: APP_VERSION
+    value: v0.1
+build:
+  compile:
+    publish:
+     - target/
+bake:
+  skip: false
+test:
+  skip: true
+deploy_to_qa:
+  skip: true
+deploy_to_prod:
+  skip: false
+
